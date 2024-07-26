@@ -1,0 +1,40 @@
+h1{
+    font-size: 50px;
+    text-align: center;
+}
+.box{
+    border: 1px solid black;
+    height: 350px;
+    width: 350px;
+    margin: auto;
+}
+.space{
+    font-size: 25px;
+    padding: 10px;
+}
+.space input{
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+}
+.btn{ 
+   
+    padding: 10px;
+    display: flex;
+    gap: 10px;  
+}
+.btn button{
+    height: 40px;
+    width: 80px;
+    font-size: 25px;
+}
+.space2{
+    font-size: 25px;
+    padding: 10px;
+}
+.space2 input{
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+}
+
