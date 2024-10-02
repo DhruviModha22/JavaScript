@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>9.Write a JavaScript program that creates a class called Bank with properties for bank names and branches. Include methods to add a branch, remove a branch, and display all branches. Create an instance of the Bank class and perform operations to add and remove branches.</p>
+</body>
+</html>
+
+<script>
+  
+class Bank {
+    constructor(bankName) {
+        this.bankName = bankName;
+        this.branches = [];
+    }
+
+    
+    addBranch(branch) {
+        this.branches.push(branch);
+        console.log(`Branch '${branch}' added to ${this.bankName}.`);
+    }
+
+
+    removeBranch(branch) {
+        const index = this.branches.indexOf(branch);
+        if (index !== -1) {
+            this.branches.splice(index, 1); 
+            console.log(`Branch '${branch}' removed from ${this.bankName}.`);
+        } else {
+            console.log(`Branch '${branch}' not found in ${this.bankName}.`);
+        }
+    }
+
+
+    displayBranches() {
+        if (this.branches.length > 0) {
+            console.log(`Branches of ${this.bankName}:`);
+            this.branches.forEach((branch, index) => {
+                console.log(`${index + 1}. ${branch}`);
+            });
+        } else {
+            console.log(`No branches available for ${this.bankName}.`);
+        }
+    }
+}
+
+const myBank = new Bank("National Bank");
+
+// Add some branches
+myBank.addBranch("bopal");
+myBank.addBranch("ghuma");
+myBank.addBranch("sanand");
+
+
+// Display all branches
+myBank.displayBranches();
+
+// Remove a branch
+myBank.removeBranch("ghuma");
+
+// Display all branches again after removal
+myBank.displayBranches();
+
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>3.Write a JavaScript program that creates a class called 'Vehicle' with properties for make, model, and year. Include a method to display vehicle details. Create a subclass called 'Car' that inherits from the 'Vehicle' class and includes an additional property for the number of doors. Override the display method to include the number of doors.</p>
+</body>
+</html>
+
+<script>
+    class vehicle{
+        constructor(make,model,year){
+            this.make=make;
+            this.model=model;
+            this.year=year;
+        }
+
+        displayDetails(){
+            console.log(`Make:${this.make},Model:${this.model},year:${this.year}`);
+        }
+    }
+    
+    class car extends vehicle{
+        constructor(make,model,year,doors){
+            super(make,model,year); //call the parent class constructor
+            this.doors=doors;
+        }
+
+        displayDetails(){
+            console.log(`Make:${this.make},Model:${this.model},year:${this.year},Doors:${this.doors}`);
+        }
+    }
+
+    const mycar=new car("TATA","Safari",2021,4);
+    const mycar2=new car("Toyota","Corolla",2021,4);
+
+
+    mycar.displayDetails();
+    mycar2.displayDetails();
+</script>

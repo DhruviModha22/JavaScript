@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>8.Write a JavaScript program that creates a class called 'Animal' with properties for species and sound. Include a method to make the animal's sound. Create a subclass called 'Dog' that inherits from the 'Animal' class and adds an additional property for color. Override the make sound method to include the dog's color. Create an instance of the 'Dog' class and make it make its sound.</p>
+</body>
+</html>
+
+<script>
+class Animal {
+    constructor(species, sound) {
+        this.species = species;
+        this.sound = sound;
+    }
+
+    makeSound() {
+        console.log(`${this.species} makes a sound: ${this.sound}`);
+    }
+}
+
+
+class Dog extends Animal {
+    constructor(species, sound, color) {
+        super(species, sound);  
+        this.color = color;   
+    }
+
+    makeSound() {
+        console.log(`The ${this.color} dog goes: ${this.sound}`);
+    }
+}
+
+// Create an instance of the Dog class
+const myDog = new Dog("Dog", "Woof Woof", "brown");
+
+// Make the dog make its sound
+myDog.makeSound();
+
+</script>

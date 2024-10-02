@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>6.Write a JavaScript program that creates a class called 'Employee' with properties for name and salary. Include a method to calculate annual salary. Create a subclass called 'Manager' that inherits from the 'Employee' class and adds an additional property for department. Override the annual salary calculation method to include bonuses for managers. Create two instances of the 'Manager' class and calculate their annual salary.</p>
+</body>
+</html>
+
+<script>
+class Employee {
+    constructor(name,salary) {
+        this.name=name;
+        this.salary=salary;
+    }
+
+    calculateAnnualSalary(){
+        return this.salary*12;
+    }
+}
+
+class manager extends Employee{
+    constructor(name,salary,department,bonus){
+        super(name,salary);
+        this.department=department;
+        this.bonus=bonus;
+    }
+
+    calculateAnnualSalary(){
+        const baseAnnualSalary=super.calculateAnnualSalary();
+        return baseAnnualSalary+this.bonus;
+    }
+}
+
+const manager1=new manager("Dhruvi",50000,"CEO",20000);
+const manager2=new manager("Vansh",40000,"CFO",20000);
+
+console.log(`${manager1.name}'s Annual Salary: ${manager1.calculateAnnualSalary()}`);
+console.log(`${manager2.name}'s Annual Salary: ${manager2.calculateAnnualSalary()}`);
+
+</script>
