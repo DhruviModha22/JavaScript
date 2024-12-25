@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+    
+        img {
+            width: 600px;
+            height: 400px;
+            border: 3px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            
+        }
+    
+        button:hover {
+            background-color: #0056b3;
+        }
+    
+        button:active {
+            background-color: #003d80;
+        }
+    </style>
+    
+
+</head>
+<body>
+    <!-- <h2 id="slider"></h2> -->
+     <img id="slider" src="" alt="">
+     <div>
+        <button id="back">Prev</button>
+    <button id="next">Next</button>
+     </div>
+    
+</body>
+</html>
+
+<script>
+    let array=["https://images.pexels.com/photos/29892939/pexels-photo-29892939/free-photo-of-festive-holiday-hot-cocoa-flat-lay-with-toys.jpeg","https://images.pexels.com/photos/28396375/pexels-photo-28396375/free-photo-of-curving-road-through-scenic-black-and-white-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/28186188/pexels-photo-28186188/free-photo-of-a-woman-with-an-umbrella-standing-on-the-street.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/29884577/pexels-photo-29884577/free-photo-of-monochrome-landscape-of-a-lonely-tree-in-bolu.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/24524409/pexels-photo-24524409/free-photo-of-newlyweds-hands-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"]
+    let slider=document.getElementById("slider");
+    let backButton=document.getElementById("back");
+    let nextButton=document.getElementById("next");
+    let count=0
+
+    nextButton.addEventListener("click",() =>{
+        if (count==array.length-1){
+            count=0;
+        }else {
+            count++;
+        }
+
+       showData();
+    });
+
+    backButton.addEventListener("click",() =>{
+        if (count==0){
+            count=array.length-1;
+        }else {
+            count--;
+        }
+       showData();
+    });
+
+    function showData(){
+          slider.src = array[count]
+    }
+
+    showData();
+
+</script>
